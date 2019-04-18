@@ -1,0 +1,859 @@
+<!DOCTYPE html><html><head>
+      <title>report</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/terfno/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.13/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="20190412-%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E6%BC%94%E7%BF%92">2019/04/12 &#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x6F14;&#x7FD2;</h1>
+
+<style>
+    .center{
+        text-align:center;
+    }
+</style>
+<h2 class="mume-header" id="%E7%9B%AE%E7%9A%84">&#x76EE;&#x7684;</h2>
+
+<p>&#x3053;&#x306E;&#x6F14;&#x7FD2;&#x306B;&#x304A;&#x3044;&#x3066;&#x306F;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x3084;&#x3001;IDE&#x3092;&#x4F7F;&#x3063;&#x305F;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x30FB;&#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EA;&#x30F3;&#x30B0;&#x3092;&#x5B66;&#x3076;&#x3002;</p>
+<h2 class="mume-header" id="%E8%A3%85%E7%BD%AE">&#x88C5;&#x7F6E;</h2>
+
+<ul>
+<li>&#x5B66;&#x6821;&#x306E;PC</li>
+<li>MacBook Pro(&#x79C1;&#x7269;)</li>
+</ul>
+<h2 class="mume-header" id="%E5%AE%9F%E9%A8%93">&#x5B9F;&#x9A13;</h2>
+
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C11">&#x554F;&#x984C;1.1</h3>
+
+<blockquote>
+<p>&#x5B9F;&#x9A13;&#x66F8;1.2&#x7BC0;&#x306E;&#x7B87;&#x6761;&#x66F8;&#x304D;&#x306B;&#x5247;&#x3063;&#x3066;&#x3001;&#x8868;1.1&#x306B;&#x793A;&#x3059;&#x30BD;&#x30EA;&#x30E5;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x56F3;1.1&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x3001;&#x5B9F;&#x9A13;&#x7D50;&#x679C;&#x3092;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3067;&#x793A;&#x305B;&#x3002;</p>
+</blockquote>
+<div class="center">&#x8868;1.1 &#x30BD;&#x30EA;&#x30E5;&#x30FC;&#x30B7;&#x30E7;&#x30F3;</div>
+<table>
+<thead>
+<tr>
+<th>&#x9805;&#x76EE;</th>
+<th>&#x5024;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x540D;&#x524D;</td>
+<td>chapter1_1</td>
+</tr>
+<tr>
+<td>&#x5834;&#x6240;</td>
+<td>&#x30C7;&#x30D5;&#x30A9;</td>
+</tr>
+<tr>
+<td>&#x30BD;&#x30EA;&#x30E5;&#x30FC;&#x30B7;&#x30E7;&#x30F3;</td>
+<td>chapter1</td>
+</tr>
+</tbody>
+</table>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.1&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_1
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World!&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;Takahito Sueda&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.1 Hello World</div>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.1.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_1.png" alt="img"></p>
+<div class="center">&#x56F3;1.1.1 Hello World</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C12">&#x554F;&#x984C;1.2</h3>
+
+<blockquote>
+<p>1.2&#x7BC0;&#x306E;&#x7B87;&#x6761;&#x66F8;&#x304D;&#x306B;&#x5247;&#x3063;&#x3066;&#x3001;&#x56F3;1.2&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x3001;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3067;&#x793A;&#x305B;&#x3002;&#x307E;&#x305F;&#x3001;1&#x3068;&#x306E;&#x52D5;&#x4F5C;&#x306E;&#x9055;&#x3044;&#x3092;&#x8AAC;&#x660E;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.2&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_2
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>Diagnostics<span class="token punctuation">.</span>Debug<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World!&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;Takahito Sueda&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.2 Debug.WriteLine</div>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306E;&#x3046;&#x3061;&#x3001;Terminal&#x306E;&#x7D50;&#x679C;&#x3092;&#x56F3;1.2.1&#x306B;&#x3001;VS&#x4E0A;&#x3067;&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.2.2&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<p><img src="./img/%E5%95%8F%E9%A1%8C1_2_t.png" alt="img"></p>
+<div class="center">&#x56F3;1.2.1 terminal</div>
+<p><img src="./img/%E5%95%8F%E9%A1%8C1_2_v.png" alt="img"></p>
+<div class="center">&#x56F3;1.2.2 Visual Studio</div>
+<br>
+Debug&#x3068;&#x3057;&#x3066;&#x51FA;&#x529B;&#x3059;&#x308B;&#x306E;&#x3067;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306E;&#x51FA;&#x529B;&#x5148;&#x3067;&#x306F;&#x306A;&#x304F;&#x958B;&#x767A;&#x8005;&#x306E;&#x898B;&#x3048;&#x308B;VS&#x306B;&#x51FA;&#x529B;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C13">&#x554F;&#x984C;1.3</h3>
+
+<blockquote>
+<p>&#x5B9F;&#x9A13;&#x66F8;&#x306E;&#x56F3;1.5&#x3001;1.6&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x554F;&#x984C;1.1&#x306E;Main&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x5148;&#x982D;&#x306B;&#x8FFD;&#x52A0;&#x3057;&#x3001;&#x307E;&#x305F;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x53D6;&#x308A;&#x9664;&#x3044;&#x3066;&#x3001;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3067;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.3&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_1
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// &#x56F3;1.5</span>
+            <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> e <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> f <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>b <span class="token operator">-</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>c <span class="token operator">*</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>d <span class="token operator">/</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>e <span class="token operator">%</span> f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// &#x56F3;1.6</span>
+            <span class="token keyword">double</span> de <span class="token operator">=</span> <span class="token number">5.0</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>d <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>de<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>d <span class="token operator">/</span> de<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//Console.WriteLine((bool)42); &#x2190;bool&#x3078;&#x306E;&#x5909;&#x63DB;&#x3067;&#x30A8;&#x30E9;&#x30FC;&#x3002;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x30A2;&#x30A6;&#x30C8;&#x3067;&#x89E3;&#x6C7A;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World!&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;Takahito Sueda&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.3 &#x56DB;&#x5247;&#x6F14;&#x7B97;&#x3068;&#x578B;&#x30AD;&#x30E3;&#x30B9;&#x30C8;</div>
+<br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.3.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_3.png" alt="img"></p>
+<div class="center">&#x56F3;1.3.1 &#x5404;&#x6F14;&#x7B97;&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C14">&#x554F;&#x984C;1.4</h3>
+
+<blockquote>
+<p>&#x5B9F;&#x9A13;&#x66F8;&#x306E;&#x56F3;1.13&#x3067;&#x672C;&#x6765;&#x60F3;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x51E6;&#x7406;&#x7D50;&#x679C;&#x3092;&#x3001;&#x5B9F;&#x73FE;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.4&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_4
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">string</span> s4 <span class="token operator">=</span> <span class="token string">&quot;&#x3057;&#x3076;&#x3044;&#x304A;&#x3061;&#x3083;&quot;</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            s4 <span class="token operator">=</span> s4<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s4 <span class="token operator">=</span> s4<span class="token punctuation">.</span><span class="token function">Insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x308D;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s4 <span class="token operator">=</span> s4<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s4 <span class="token operator">=</span> s4<span class="token punctuation">.</span><span class="token function">Insert</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x3070;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.4 &#x6587;&#x5B57;&#x306E;&#x304A;&#x304D;&#x304B;&#x3048;</div>
+<br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.4.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_4.png" alt="img"></p>
+<div class="center">&#x56F3;1.4.1 &#x6587;&#x5B57;&#x306E;&#x7F6E;&#x304D;&#x63DB;&#x3048;&#x524D;&#x3068;&#x5F8C;</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C14a">&#x554F;&#x984C;1.4.a</h3>
+
+<blockquote>
+<p>&#x8FFD;&#x52A0;&#x554F;&#x984C;<br>
+&#x5B9F;&#x9A13;&#x66F8;&#x56F3;1.7&#x306E;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3001;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3067;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.4.a&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_4_a
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.4.a &#x914D;&#x5217;</div>
+<br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.4.a.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_4_a.png" alt="img"></p>
+<div class="center">&#x56F3;1.4.a.1 </div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C15">&#x554F;&#x984C;1.5</h3>
+
+<blockquote>
+<p>&#x554F;&#x984C;&#x756A;&#x53F7;&#x306E;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3001;&#x5B9F;&#x9A13;&#x66F8;&#x306E;&#x56F3;1.14&#x3068;1.15&#x306E;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3067;&#x793A;&#x305B;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.5&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_5
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">string</span> input <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                input <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token comment">// &#x56F3;1.14</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>input<span class="token punctuation">.</span>Length <span class="token operator">&gt;=</span> <span class="token number">10</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;10&#x6587;&#x5B57;&#x4EE5;&#x4E0A;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>input<span class="token punctuation">.</span>Length <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;5&#x6587;&#x5B57;&#x672A;&#x6E80;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;5&#x6587;&#x5B57;&#x4EE5;&#x4E0A;10&#x6587;&#x5B57;&#x672A;&#x6E80;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// &#x56F3;1.15</span>
+                <span class="token keyword">switch</span> <span class="token punctuation">(</span>input<span class="token punctuation">.</span>Length<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token keyword">case</span> <span class="token number">5</span><span class="token punctuation">:</span>
+                        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;5&#x6587;&#x5B57;&#x3061;&#x3087;&#x3046;&#x3069;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token keyword">case</span> <span class="token number">10</span><span class="token punctuation">:</span>
+                        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;10&#x6587;&#x5B57;&#x3061;&#x3087;&#x3046;&#x3069;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token keyword">default</span><span class="token punctuation">:</span>
+                        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;5&#x6587;&#x5B57;&#x3067;&#x3082;10&#x6587;&#x5B57;&#x3067;&#x3082;&#x306A;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.5 if&#x3068;switch</div>
+<br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.5.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_5.png" alt="img"></p>
+<div class="center">&#x56F3;1.5.1 &#x5404;&#x5206;&#x5C90;&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C16">&#x554F;&#x984C;1.6</h3>
+
+<blockquote>
+<p>&#x554F;&#x984C;&#x756A;&#x53F7;&#x306E;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3001;&#x6761;&#x4EF6;&#x5206;&#x5C90;&#x6587;&#x3092;&#x99C6;&#x4F7F;&#x3057;&#x3066;&#x3001;&#x96FB;&#x5353;&#x3092;&#x4F5C;&#x308C;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.6&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_6
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5024;1(&#x6574;&#x6570;)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">string</span> value1 <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> v1 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6F14;&#x7B97;&#x5B50;(+,-,*,/)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">string</span> cal <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5024;2(&#x6574;&#x6570;)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">string</span> value2 <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> v2 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>value2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7B54;&#x3048;&#x306F;&#x2026;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">switch</span> <span class="token punctuation">(</span>cal<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">case</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">:</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>v1 <span class="token operator">+</span> v2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">:</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>v1 <span class="token operator">-</span> v2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">:</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>v1 <span class="token operator">*</span> v2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">:</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>v1 <span class="token operator">/</span> v2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">default</span><span class="token punctuation">:</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.6 &#x7C21;&#x6613;&#x8A08;&#x7B97;&#x6A5F;</div><br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.6.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_6.png" alt="img"></p>
+<div class="center">&#x56F3;1.6.1 &#x5236;&#x4F5C;&#x3057;&#x305F;&#x96FB;&#x5353;</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C17">&#x554F;&#x984C;1.7</h3>
+
+<blockquote>
+<p>&#x5B9F;&#x9A13;&#x66F8;&#x306E;&#x56F3;1.17&#x306E;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x3055;&#x304F;&#x305B;&#x3044;&#x3057;&#x3001;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3092;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.7&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_7
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> j<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.7 2&#x91CD;&#x30EB;&#x30FC;&#x30D7;</div><br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.7.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_7.png" alt="img"></p>
+<div class="center">&#x56F3;1.7.1 2&#x91CD;&#x30EB;&#x30FC;&#x30D7;&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C18">&#x554F;&#x984C;1.8</h3>
+
+<blockquote>
+<p>&#x5B9F;&#x9A13;&#x66F8;&#x306E;&#x56F3;1.18&#x306E;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3092;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.8&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_8
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dlist <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token number">1592</span><span class="token punctuation">,</span> <span class="token number">6534</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">double</span> d <span class="token keyword">in</span> dlist<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.8 foreach&#x306B;&#x3088;&#x308B;&#x7E70;&#x308A;&#x8FD4;&#x3057;</div><br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.8.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_8.png" alt="img"></p>
+<div class="center">&#x56F3;1.8.1 foreach&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C19">&#x554F;&#x984C;1.9</h3>
+
+<blockquote>
+<p>&#x554F;&#x984C;1.6&#x3092;&#x62E1;&#x5F35;&#x3057;&#x3001;e&#x3068;&#x5165;&#x529B;&#x3059;&#x308B;&#x307E;&#x3067;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x7D9A;&#x3051;&#x308B;&#x3088;&#x3046;&#x306B;&#x6539;&#x5909;&#x3057;&#x3001;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3092;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.9&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_9
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5024;1(&#x6574;&#x6570;)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">string</span> value1 <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>value1 <span class="token operator">==</span> <span class="token string">&quot;e&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Environment<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token punctuation">}</span>
+            <span class="token keyword">int</span> v1 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6F14;&#x7B97;&#x5B50;(+,-,*,/)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">string</span> cal <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>value1 <span class="token operator">==</span> <span class="token string">&quot;e&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Environment<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5024;2(&#x6574;&#x6570;)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">string</span> value2 <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>value1 <span class="token operator">==</span> <span class="token string">&quot;e&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Environment<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">int</span> v2 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>value2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7B54;&#x3048;&#x306F;&#x2026;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span> <span class="token punctuation">;</span> <span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">switch</span> <span class="token punctuation">(</span>cal<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token keyword">case</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">:</span>
+                        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>v1 <span class="token operator">+</span> v2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token keyword">case</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">:</span>
+                        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>v1 <span class="token operator">-</span> v2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token keyword">case</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">:</span>
+                        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>v1 <span class="token operator">*</span> v2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token keyword">case</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">:</span>
+                        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>v1 <span class="token operator">/</span> v2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token keyword">default</span><span class="token punctuation">:</span>
+                        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5024;1(&#x6574;&#x6570;)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                value1 <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>value1 <span class="token operator">==</span> <span class="token string">&quot;e&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Environment<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                v1 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6F14;&#x7B97;&#x5B50;(+,-,*,/)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                cal <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>value1 <span class="token operator">==</span> <span class="token string">&quot;e&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Environment<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5024;2(&#x6574;&#x6570;)&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                value2 <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>value1 <span class="token operator">==</span> <span class="token string">&quot;e&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Environment<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                v2 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>value2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7B54;&#x3048;&#x306F;&#x2026;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.9 UX&#x304C;&#x82E5;&#x5E72;&#x5411;&#x4E0A;&#x3057;&#x305F;&#x7C21;&#x6613;&#x8A08;&#x7B97;&#x6A5F;</div><br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.9.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_9.png" alt="img"></p>
+<div class="center">&#x56F3;1.9.1 &#x7C21;&#x6613;&#x8A08;&#x7B97;&#x6A5F;&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C110">&#x554F;&#x984C;1.10</h3>
+
+<blockquote>
+<p>&#x5B9F;&#x9A13;&#x66F8;&#x56F3;1.19&#x306E;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x4F5C;&#x6210;&#x3001;&#x5B9F;&#x884C;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x89E3;&#x6D88;&#x3057;&#x3001;&#x305D;&#x308C;&#x305E;&#x308C;&#x3092;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30A8;&#x30E9;&#x30FC;&#x6642;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3092;&#x56F3;1.10.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_10_e.png" alt="img"></p>
+<div class="center">&#x56F3;1.10.1 &#x30A8;&#x30E9;&#x30FC;</div>
+<p>&#x30A8;&#x30E9;&#x30FC;&#x89E3;&#x6D88;&#x5F8C;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3092;&#x56F3;1.10.2&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_10_ae.png" alt="img"></p>
+<div class="center">&#x56F3;1.10.2 &#x30A8;&#x30E9;&#x30FC;&#x89E3;&#x6D88;</div>
+<p>&#x307E;&#x305F;&#x3001;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x56F3;1.10.3&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_10
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Print9x9</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">&quot;{0} &quot;</span><span class="token punctuation">,</span> j <span class="token operator">*</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">Print9x9</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.10.3 &#x30A8;&#x30E9;&#x30FC;&#x89E3;&#x6D88;&#x5F8C;</div><br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.10.1&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_10_t.png" alt="img"></p>
+<div class="center">&#x56F3;1.10.1 9x9&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;</div>
+<h3 class="mume-header" id="%E5%95%8F%E9%A1%8C111">&#x554F;&#x984C;1.11</h3>
+
+<blockquote>
+<p>&#x5B9F;&#x9A13;&#x66F8;&#x306E;&#x56F3;1.21&#x304A;&#x3088;&#x3073;&#x3001;&#x56F3;1.22&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x3092;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p><code>Program.cs</code>&#x3092;&#x56F3;1.11.1&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> chapter1_10
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Print9x9</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">&quot;{0} &quot;</span><span class="token punctuation">,</span> j <span class="token operator">*</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">Print9x9</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.11.1 Program.cs</div><br>
+<p><code>TestNamespace.cs</code>&#x3092;&#x56F3;1.11.2&#x306B;&#x793A;&#x3059;&#x3002;</p>
+<pre data-role="codeBlock" data-info="cs" class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+<span class="token keyword">namespace</span> Hello
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestNamespace</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">PrintTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Test Namespace!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre><div class="center">&#x56F3;1.11.2 TestNamespace.cs</div><br>
+<p>&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x56F3;1.11.3&#x306B;&#x793A;&#x3059;&#x3002;<br>
+<img src="./img/%E5%95%8F%E9%A1%8C1_11_t.png" alt="img"></p>
+<div class="center">&#x56F3;1.11.3 &#x5B9F;&#x884C;&#x7D50;&#x679C;</div>
+<h2 class="mume-header" id="%E8%AA%B2%E9%A1%8C">&#x8AB2;&#x984C;</h2>
+
+<h3 class="mume-header" id="%E8%AA%B2%E9%A1%8C11">&#x8AB2;&#x984C;1.1</h3>
+
+<blockquote>
+<p>&#x30BB;&#x30B0;&#x30E1;&#x30F3;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x9055;&#x53CD;&#x3068;&#x306F;&#x3069;&#x3046;&#x3044;&#x3046;&#x30A8;&#x30E9;&#x30FC;&#x304B;&#x3001;&#x8ABF;&#x3079;&#x3066;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x30B0;&#x30E1;&#x30F3;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x9055;&#x53CD;&#x306F;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x304C;&#x8A31;&#x53EF;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x30E1;&#x30E2;&#x30EA;&#x4E0A;&#x306E;&#x4F4D;&#x7F6E;&#x3001;&#x3082;&#x3057;&#x304F;&#x306F;&#x8A31;&#x53EF;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x65B9;&#x6CD5;&#x3067;&#x30E1;&#x30E2;&#x30EA;&#x4E0A;&#x306E;&#x4F4D;&#x7F6E;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#x304D;&#x306B;&#x8D77;&#x3053;&#x308B;&#x30A8;&#x30E9;&#x30FC;&#x3067;&#x3042;&#x308B;&#x3002;<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h3 class="mume-header" id="%E8%AA%B2%E9%A1%8C12">&#x8AB2;&#x984C;1.2</h3>
+
+<blockquote>
+<p>&#x4EE3;&#x8868;&#x7684;&#x306A;&#x9759;&#x7684;&#x578B;&#x4ED8;&#x3051;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x8A00;&#x8A9E;&#x304A;&#x3088;&#x3073;&#x52D5;&#x7684;&#x578B;&#x4ED8;&#x3051;&#x8A00;&#x8A9E;&#x3092;&#x8ABF;&#x3079;&#x3066;3&#x3064;&#x305A;&#x3064;&#x5831;&#x544A;&#x3057;&#x306A;&#x3055;&#x3044;&#x3002;</p>
+</blockquote>
+<p>&#x9759;&#x7684;&#x578B;&#x4ED8;&#x3051;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x8A00;&#x8A9E;&#x306E;&#x4F8B;</p>
+<ul>
+<li>Go Lang</li>
+<li>Haskell</li>
+<li>Swift</li>
+</ul>
+<p>&#x52D5;&#x7684;&#x578B;&#x4ED8;&#x3051;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x8A00;&#x8A9E;&#x306E;&#x4F8B;</p>
+<ul>
+<li>Lisp</li>
+<li>Ruby</li>
+<li>Python</li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://ja.wikipedia.org/wiki/%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%81%95%E5%8F%8D">&#x30BB;&#x30B0;&#x30E1;&#x30F3;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x9055;&#x53CD;</a> <a href="#fnref1" class="footnote-backref">&#x21A9;&#xFE0E;</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
