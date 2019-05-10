@@ -224,7 +224,7 @@ SwitchFlagがFuncArray内のflagを制御しているため、制御結合であ
 
 if文を用いて処理の選択がなされているため論理的凝集度である。
 
-### カヂあ4.3
+### 課題4.3
 > 次の関数名が望ましくない理由を述べなさい。
 > * HandleCalculation
 > * OutputUser1, OutputUser2
