@@ -29,10 +29,19 @@ namespace chapter4_1
                     continue;
                 }
 
-                for (int i = 0; i < dupCnt; i++)
+                for (int i = 0; i < b.Length; i++)
                 {
-                    // 略
+                    if (a[j] == b[i])
+                    {
+                        dup[dupCnt] = a[j];
+                        dupCnt++;
+                    }
                 }
+            }
+
+            for (int i = 0; i < dupCnt; i++)
+            {
+                Console.Write(dup[i] + " ");
             }
         }
 
