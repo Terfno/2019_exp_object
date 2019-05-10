@@ -16,13 +16,13 @@ namespace chapter4_1
             return false;
         }
 
-        static void IntersectAndPrint (int[] a, int[] b)
+        static int[] Intersect(int[] a, int[] b)
         {
             int[] dup = new int[a.Length];
 
             int dupCnt = 0;
 
-            for(int j = 0; j < a.Length; j++)
+            for (int j = 0; j < a.Length; j++)
             {
                 if (Containe(dup, dupCnt, a[j]))
                 {
@@ -39,9 +39,20 @@ namespace chapter4_1
                 }
             }
 
-            for (int i = 0; i < dupCnt; i++)
+            int[] ans = new int[dupCnt];
+            for(int i = 0; i < dupCnt; i++)
             {
-                Console.Write(dup[i] + " ");
+                ans[i] = dup[i];
+            }
+
+            return ans;
+        }
+
+        static void Print (int[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.Write(a[i] + " ");
             }
         }
 
@@ -50,7 +61,7 @@ namespace chapter4_1
             int[] a1 = new int[5] { 1, 2, 3, 4, 5 };
             int[] a2 = new int[5] { 3, 1, 5, 10, 11 };
 
-            IntersectAndPrint(a1, a2);
+            Print(Intersect(a1, a2));
 
             Console.ReadKey();
         }
