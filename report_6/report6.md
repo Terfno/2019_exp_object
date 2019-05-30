@@ -1,4 +1,4 @@
-# 2019/05/24 
+# 2019/05/24 プログラミング演習
 <style>
     .c{
         text-align:center;
@@ -264,7 +264,25 @@ namespace chapter6_7
 ### 課題6.1
 > クラス図の書き方について調べ、問題6.6のクラス構造について図示し、ソースコードの対応関係も含めて具体的に説明しなさい。
 
+<!-- ```graphviz
+digraph obj{
+    node[shape=record];
+    rankdir="BT";
+
+    friends [label = "{<f0> User|GetUserName()}"];
+    serval [label = "{<f0> Teacher|GetUserName() \n ↑役職を表示するように\n Userクラスのメソッドを\noverrideしている。}"];
+    raccoon [label = "{<f0> Student|GetUserName()という\nメソッドは無いので、\nUserクラスのメソッドが走る。}"];
+
+    serval->friends
+    raccoon->friends
+}
+``` -->
+
+クラス図と説明を図7.1に示す。
+![img](./img/7.1.png)
+
 ### 課題6.2
 > なぜ、多態性によって結合度が低下し凝集度が高まるのか説明しなさい。
 
-name + value
+多態性を導入しなかった場合、似たような動作をする似たような関数をクラスごとに作成しなくてはならず、凝集度が下がる。
+クラスごとに振る舞いが変わるという多態性を導入することで、似たような動作をする関数を1つにまとめることができ、凝集度が高まり、結合度が低下する。
