@@ -6,7 +6,7 @@
 </style>
 
 ## issue
-* [ ] クラス図の修正
+* [x] クラス図の修正
 
 ## 目的
 この演習ではオブジェクト指向プログラミングの基礎であるクラスの継承について学ぶ。
@@ -271,18 +271,43 @@ namespace chapter6_7
 digraph obj{
     node[shape=record];
     rankdir="BT";
-
-    friends [label = "{<f0> User|GetUserName()}"];
-    serval [label = "{<f0> Teacher|GetUserName() \n ↑役職を表示するように\n Userクラスのメソッドを\noverrideしている。}"];
-    raccoon [label = "{<f0> Student|GetUserName()という\nメソッドは無いので、\nUserクラスのメソッドが走る。}"];
-
-    serval->friends
-    raccoon->friends
+    
+    user [label ="{
+    User|
+    - familyName: string \n
+    - firstName: string|
+    + User()\n
+    + GetUserName(): string
+    }"];
+    
+    teacher [label="{
+    Teacher|
+    - yakusyoku: string|
+    + Teacher()\n
+    + GetUserName(): string
+    }"];
+    
+    student [label="{
+    Student|
+    - studentID: string\n
+    - entryYear: int\n
+    - no: int|
+    + Student()\n
+    + GetID(): string
+    }"];
+    
+    edge [arrowhead = "vee" style="dashed"]
+    teacher->user
+    student->user
+    
 }
 ``` -->
 
-クラス図と説明を図7.1に示す。
+クラス図を図7.1に示す。
 ![img](./img/7.1.png)
+
+Teacherクラスは、役職を表示するようにUserクラスのメソッドをoverrideしている。
+Studentクラスは、GetUserName()というメソッドは無いので、Userクラスのメソッドが走る。
 
 ### 課題6.2
 > なぜ、多態性によって結合度が低下し凝集度が高まるのか説明しなさい。
