@@ -7,7 +7,7 @@
 
 ## issue
 * [x] クラス図の修正
-* [ ] クラス図の修正 // 矢印はemptyのやつ
+* [x] クラス図の修正 // 矢印はemptyのやつ
 
 ## 目的
 この演習ではオブジェクト指向プログラミングの基礎であるクラスの継承について学ぶ。
@@ -300,7 +300,6 @@ digraph obj{
     edge [arrowhead = "empty" style="dashed"]
     teacher->user
     student->user
-    
 }
 ``` -->
 
