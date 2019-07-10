@@ -232,8 +232,171 @@ namespace chapter8_3
 ### レポート課題8.1
 > 今回紹介したデザインパターン以外で、GoFのデザインパターンを3つ調べてどのようなクラス設計になるのかクラス図を示し、利用すべき状況と利用によって生まれる利点を示しなさい。
 
+今回使用したデザインパターンは以下の3つで、SingletonとFactory Methodは生成に係るデザインパターン、Strategyは振る舞いに関するデザインパターンである。
+* Singleton
+* Factory Method
+* Strategy
+
+#### Bridge
+構造に係るデザインパターンとして、Bridgeがある。
+クラスの中に複数の継承関係が存在する際に、それぞれを分離して考えることができる。そうすることでそれぞれのクラスを拡張することが容易になりクラス数も減らすことができる。
+Bridgeのデザインパターンを適用する前のクラス図を図8.4.1.1に示す。適用後を図8.4.1.2に示す。
+<!-- ```graphviz
+digraph obj{
+    node[shape=record];
+    rankdir="BT"
+    
+    pen [label="{
+    Pen||
+    }"];
+    
+    jet [label="{
+    Jetstream||
+    }"]
+    
+    jet_r [label="{
+    Jetstream red||
+    }"]
+    
+    jet_b [label="{
+    Jetstream black||
+    }"]
+    
+    sarasa [label="{
+    sarasa||
+    }"]
+    
+    sarasa_r [label="{
+    sarasa red||
+    }"]
+    
+    sarasa_b [label="{
+    sarasa blacck||
+    }"]
+    
+    edge [arrowhead = "empty"]
+    jet_r -> jet
+    jet_b -> jet
+    jet -> pen
+    sarasa_r -> sarasa
+    sarasa_b -> sarasa
+    sarasa -> pen
+}
+``` -->
+![img](./img/8.4.1.1.png)
+<div class="c">図8.4.1.1 Bridgeデザインパターン適用前</div>
+
+<!-- ```graphviz
+digraph obj{
+    node[shape=record];
+    rankdir="BT";
+    
+    pen [label="{
+    Pen||
+    }"];
+    
+    ink [label="{
+    Ink||
+    }"]
+    
+    jet [label="{
+    Jetstream||
+    }"]
+    
+    sarasa [label="{
+    sarasa||
+    }"]
+    
+    black [label="{
+    black||
+    }"]
+    
+    red [label="{
+    red||
+    }"]
+    
+    edge [arrowhead = "odiamond"]
+    ink -> pen
+    
+    edge [arrowhead = "empty"]
+    jet -> pen
+    sarasa -> pen
+    black -> ink
+    red -> ink
+}
+``` -->
+
+![img](./img/8.4.1.2.png)
+<div class="c">図8.4.1.2 Bridgeデザインパターン適用後</div>
+
+#### Future
+マルチスレッドプログラミングに係るデザインパターンとしてFutureがある。JSのPromiseみたいな感じ。(カール・ヒューイットはPromiseという表現よりFutureが適切だと述べているらしい。)
+Futureのクラスはインターフェースとして実装される。
+クラス図を図8.4.2に示す。
+<!-- ```graphviz
+digraph obj{
+    node[shape=record];
+    rankdir="BT";
+    
+    future [label ="{
+    Future||
+    }"]
+    
+    class [label ="{
+    Something||
+    }"]
+    
+    edge [arrowhead = "empty" style="dashed"]
+    class -> future
+}
+``` -->
+![img](./img/8.4.2.png)
+<div class="c">図8.4.2 Futureデザインパターンを使用した例</div>
+
+#### Prototype
+生成に係るデザインパターンとしてPrototypeがある。
+生成されるオブジェクトが典型的なインスタンスである場合に使用する。このオブジェクトを複製してさらにオブジェクトを作る。
+<!-- ```graphviz
+digraph obj{
+    node[shape=record];
+    rankdir="BT"
+    
+    term[label="{
+    Terminal||
+    + Main()
+    }"]
+    
+    proto[label="{
+    Prototype||
+    + clone()
+    }"]
+    
+    proto_1[label="{
+    Prototype1||
+    + clone()
+    }"]
+    
+    proto_2[label="{
+    Prototype2||
+    + clone()
+    }"]
+    
+    edge [arrowhead = "vee" style="dashed"]
+    term -> proto
+    
+    edge [arrowhead = "empty" style="dashed"]
+    proto_1 -> proto
+    proto_2 -> proto
+}
+``` -->
+
+![img](./img/8.4.3.png)
+<div class="c">図8.4.3 Prototypeデザインパターンを使用した例</div>
+
 ### レポート課題8.2
 > インターフェース分離の原則において、インターフェースはどのように設計すべきか、調べてまとめなさい。
+
+
 
 ### レポート課題8.3
 > SOLID原則に基づいて、図8.4のプログラムの改良すべき点を説明しなさい。
