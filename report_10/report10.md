@@ -996,12 +996,255 @@ namespace Shooting
 ### レポート課題10.1
 > 問題10.1段階でのクラス図を描きなさい。
 
+<!-- ```graphviz
+digraph obj{
+	node[shape=record];
+	rankdir="BT";
+	
+	PlayerInputManager [label="{
+    PlayerInputManager |
+    -cWindow: CoreWindow \n
+    -shooter: IMovable |
+    +PlayerInputManager(cWindow: CoreWindow, shooter: IMovable) \n
+    +Checkinputs()
+    }"]
+    
+    Fighter [label="{
+    Fighter |
+    -d2dDeviceContext: DeviceContext \n
+    -d2dDevice:Device \n
+    -fighterPath:TransformedGeometry \n
+    -fighterBrush:SolidColorBrush \n
+    -x:int \n
+    -y:int \n
+    -firstPoint:Vector2 \n
+    -secondPoint:Vector2 \n
+    -thirdPoint:Vector2 |
+    +Fighter(ctx:DeviceContext) \n
+    +Initialize() \n
+    +Draw() \n
+    +Move(dy:int, dx:int) \n
+    +SetPosition(y:int, x:int) \n
+    +IsMovable():bool
+    }"]
+    
+    IMovable[label="{
+    ＜＜interface＞＞\n
+    IMovable ||
+    +Move(dy:int, dx:int) \n
+    +SetPosition(y:int, x:int) \n
+    +IsMovable():bool
+    }"]
+    
+    IDrawable[label="{
+    ＜＜interface＞＞\n
+    IDrawable ||
+    +Draw()
+    }"]
+    
+    App [label="{
+    App||
+    -Main()\n
+    ¯¯¯¯¯¯¯¯¯
+    }"]
+
+    FrameworkViewSource [label="{
+    FrameworkViewSource||
+    +CreateView():IFrameworkView
+    }"]
+    
+    FrameworkView [label="{
+    FrameworkView|
+    -d2dDeviceContext:SharpDX.Direct2D1.DeviceContext \n
+    -d2dTarget:Bitmap1 \n
+    -swapChain:SwapChain1 \n
+    -mWindow:CoreWindow \n
+    -tFighterPath:TransformedGeometry \n
+    -fighterBrush:SolidColorBrush \n
+    -fighterDisplay:Fighter \n
+    -displayList:List<IDrawable> |
+    +Initialize(applicationView:CoreApplicationView) \n
+    +OnActivated(applicationView:CoreApplicationView, args:IActivatedEventArgs) \n
+    +SetWindow(window:CoreWindow) \n
+    +Load(entryPoint:string) \n
+    +Run() \n
+    +Uninitialize()
+    }"]
+    
+    // クラス継承
+	edge [arrowhead = "empty"]
+    FrameworkViewSource -> IFrameworkViewSource
+    FrameworkView -> IFrameworkView
+	
+    // インターフェース
+	edge [arrowhead = "empty" style="dashed"]
+	Fighter -> IDrawable
+    Fighter -> IMovable
+    
+    // 依存
+	edge [arrowhead = "vee" style="dashed"]
+	PlayerInputManager -> IMovable
+    Fighter -> PathGeometry,Vector2,TransformedGeometry,SolidColorBrush
+    App -> FrameworkViewSource,FrameworkView
+    FrameworkView -> "SharpDX.Direct3D11.Device",SwapChainDescription1,SampleDescription,SwapChain1,"SharpDX.Direct2D1.Device","SharpDX.Direct2D1.DeviceContext",Bitmap1,Fighter,List,PlayerInputManager
+}
+``` -->
+
+クラス図を図10.3に示す。
+![img](./img/10.1.png)
+<div class="c">図10.3 問題10.1段階でのクラス図</div>
+
 ### レポート課題10.2
 > 本プログラムで使われているデザインパターンを挙げなさい。
+
+MainがstaticなのでSingletonだると推測した。
 
 ### レポート課題10.3
 > 今週改変した箇所で改良できそうな箇所を挙げ、具体的な改良方法を検討しなさい。
 
+座標情報であるxとyの宣言や使用の順番がところどころで違うのでどちらかに統一したほうが可読性が高くなると考えた。
+
 ### レポート課題10.4
 > 問題10.2段階でのクラス図を描きなさい。
- 
+
+<!-- ```graphviz
+digraph obj{
+    node[shape=record]
+    rankdir="BT"
+    
+    App[label="{
+    App||
+    -Main()\n
+    ¯¯¯¯¯¯¯¯¯
+    }"]
+    
+    FrameworkViewSource[label="{
+    FrameworkViewSource||
+    +CreateView():IFrameworkView
+    }"]
+    
+    FrameworkView [label="{
+    FrameworkView |
+    -d2dDeviceContext:SharpDX.Direct2D1.DeviceContext \n
+    -d2dTarget:Bitmap1 \n
+    -swapChain:SwapChain1 \n
+    -mWindow:CoreWindow \n
+    -tFighterPath:TransformedGeometry \n
+    -fighterBrush:SolidColorBrush \n
+    -fighterDisplay:Fighter \n 
+    -displayList:List＜IDrawable＞ \n
+    -playerShotManager:PlayerShotManager \n|
+    +Initialize(applicationView:CoreApplicationView)\n
+    +OnActivated(applicationView:CoreApplicationView, args:IActivatedEventArgs)\n
+    CreateDeviceResources()\n
+    +SetWindow(window:CoreWindow)\n
+    +Load(entryPoint:string)\n
+    +Run()\n
+    +Uninitialize()
+    }"]
+    
+    Fighter[label="{
+    Fighter|
+    -d2dDeviceContext:DeviceContext\n 
+    -d2dDevice:Device \n
+    -fighterPat:TransformedGeometry\n 
+    -fighterBrush:SolidColorBrush \n
+    -x:int \n
+    -y:int \n
+    -firstPoint:Vector2 \n
+    -secondPoint:Vector2 \n
+    -thirdPoint:Vector2 \n
+    -shotManager:PlayerShotManager \n|
+    +Fighter(ctx:DeviceContext, manager:PlayerShotManager)\n
+    Initialize()\n
+    +Draw()\n
+    +Move(dy:int, dx:int)\n
+    +SetPosition(y:int x:int)\n
+    +IsMovable():bool\n
+    +Fire()
+    }"]
+    
+    PlayerInputManager[label="{
+    PlayerInputManager|
+    -cWindow:CoreWindow \n
+    -shooter:IShooter \n|
+    +PlayerInputManager(cWindow:CoreWindow, shooter:IShooter)\n
+    +Checkinputs()\n
+    }"]
+    
+    IFirable[label="{
+    ＜＜interface＞＞\n
+    IFirable||
+    Fire()
+    }"]
+    
+    IShooter[label="{
+    ＜＜interface＞＞\n
+    IShooter||
+    }"]
+    
+    PlayerShot[label="{
+    PlayerShot|
+    -shotBrush:Brush \n
+    -MAX_X:const float = 10f \n
+    -MAX_Y:const float = 10f|
+    +PlayerShot(ctx:DeviceContext)
+    }"]
+    
+    Shot[label="{
+    Shot|
+    d2dDeviceContext:DeviceContext \n
+    center:Vector2 |
+    +Shot(ctx:DeviceContext)\n
+    +Draw()\n
+    +IsMovable():bool\n
+    +Move(dy:int, dx:int)\n
+    +SetPosition(y:int, x:int)
+    }"]
+    
+    PlayerShotManager[label="{
+    PlayerShotManager|
+    -d2dDeviceContext:DeviceContext \n 
+    -shotList:List＜Shot＞  \n
+    -drawList:List＜Shot＞  \n
+    -y:int  \n
+    -x:int  \n
+    -SHOT_NUM_MAX:const int = 10 \n
+    -SHOT_SPEED:const int = -20 \n|
+    +PlayerShotManager(ctx:DeviceContext)\n
+    Initialize()\n
+    +Fire()\n
+    +Draw()\n
+    +Update()\n
+    +Move(dy:int, dx:int)\n
+    +SetPosition(y:int, x:int)\n
+    +IsMovable():bool
+    }"]
+    
+    // クラス継承
+	edge [arrowhead = "empty"]
+    FrameworkViewSource -> IFrameworkViewSource
+    FrameworkView -> IFrameworkView
+    PlayerShot -> Shot
+	
+    // インターフェース
+	edge [arrowhead = "empty" style="dashed"]
+    Fighter -> IDrawable, IShooter
+    IShooter -> IMovable, IFirable
+    Shot -> IDrawable, IMovable
+    PlayerShotManager -> IDrawable, IMovable, IFirable
+    
+    // 依存
+	edge [arrowhead = "vee" style="dashed"]
+    App -> FrameworkViewSource,FrameworkView,"SharpDX.Direct3D11.Device,"SwapChainDescription1,"SampleDescription","SwapChain1","SharpDX.Direct2D1.Device","SharpDX.Direct2D1.DeviceContext",Bitmap1,PlayerShotManager,Fighter,List,PlayerInputManager
+    FrameworkView -> "SharpDX.Direct3D11.Device",SwapChainDescription1,SampleDescription,SwapChain1,"SharpDX.Direct2D1.Device","SharpDX.Direct2D1.DeviceContext",Bitmap1,PlayerShotManager,Fighter,List,PlayerInputManager
+    Fighter -> PathGeometry,Vector2,TransformedGeometry,SolidColorBrush
+    PlayerInputManager -> IShooter
+    PlayerShot -> SolidColorBrush
+    Shot -> Vector2
+    PlayerShotManager -> List,PlayerShot
+}
+``` -->
+クラス図を図10.4に示す。
+![img](./img/10.4.png)
+<div class="c">図10.4 問題10.2段階でのクラス図</div>
