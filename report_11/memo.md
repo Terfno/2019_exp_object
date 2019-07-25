@@ -640,7 +640,7 @@ namespace Shooting
 			{
 				return true;
 			}
-			else
+			else		
 			{
 				return false;
 			}
