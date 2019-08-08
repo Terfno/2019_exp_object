@@ -32,8 +32,7 @@
 ### レポート課題11.1
 > クラス図を報告しなさい
 
-クラス図を図11.3に示す。
-<div class="c">図11.3 クラス図</div>
+クラス図を別紙の図11.3に示す。
 
 ### レポート課題11.2
 > 新しく機能を追加するなら何を追加するか
@@ -241,18 +240,16 @@ digraph obj{
     PlayerShot -> IRectBounds
     Shot -> ITarget, IMovable
     FrameworkViewSource -> IFrameworkViewSource
+    PlayerShotManager->IDrawable, IMovable, IFirable, IUpdatable, IHittable
     
     // 依存
 	edge [arrowhead = "vee" style="dashed"]
-    SimpleEnemy->PathGeometry,Vector2,"SharpDX.Mathematics.Interop.RawVector2[]",TransformedGeometry,SolidColorBrush,ShootingUtils
-    RectTargetManager->List＜IMovableRectTarget＞,Random,SimpleEnemy
-    PlayerShotManager->IDrawable, IMovable, IFirable, IUpdatable, IHittable
-    PlayerShotManager->List＜Shot＞
-    PlayerShot -> SolidColorBrush,ShootingUtils
-    Shot -> Vector2
+    SimpleEnemy -> ShootingUtils
+    RectTargetManager -> SimpleEnemy
+    PlayerShot -> ShootingUtils
     FrameworkViewSource -> FrameworkView
     App -> FrameworkViewSource
     FrameworkViewSource -> FrameworkView
-    FrameworkView -> "SharpDX.Direct3D11.Device",SwapChainDescription1,SampleDescription,SwapChain1,"SharpDX.Direct2D1.Device","SharpDX.Direct2D1.DeviceContext","Bitmap1",List＜IUpdatable＞,PlayerShotManager,Fighter,List＜IDrawable＞,RectTargetManager,PlayerInputManager
+    FrameworkView -> PlayerShotManager,Fighter,RectTargetManager,PlayerInputManager
 }
 ``` -->
