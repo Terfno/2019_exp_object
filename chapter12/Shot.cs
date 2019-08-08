@@ -14,7 +14,6 @@ namespace Shooting
 		public abstract bool IsCrashing();
 		public abstract bool IsFinished();
 		public abstract bool IsHitted(IRectBounds c);
-
 		protected DeviceContext d2dDeviceContext;
 		protected Vector2 center;
 

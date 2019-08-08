@@ -20,11 +20,7 @@ namespace Shooting
 		private Vector2 firstPoint;
 		private Vector2 secondPoint;
 		private Vector2 thirdPoint;
-
-		// 10.11追記
 		private PlayerShotManager shotManager;
-
-		// 12.9追記
 		private bool isVisible;
 		private const float MAX_X = 50f;
 		private const float MAX_Y = 50f;

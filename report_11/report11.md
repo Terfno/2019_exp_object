@@ -11,7 +11,7 @@
 
 ## 装置/ツール
 * Visual Studio
-* Windows 10 Proト
+* Windows 10 Pro
 
 ## 実験
 ### 問題11.1

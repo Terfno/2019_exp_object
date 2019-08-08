@@ -11,7 +11,6 @@ namespace Shooting
 	public class PlayerInputManager
 	{
 		private CoreWindow cWindow;
-		// 10.11改変
 		private IShooter shooter;
 
 		public PlayerInputManager(CoreWindow cWindow, IShooter shooter)
